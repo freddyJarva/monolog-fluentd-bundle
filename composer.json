@@ -24,16 +24,15 @@
         "sort-packages": true
     },
     "require": {
-        "php": "^5.5 || >=7.0 <7.2",
-        "symfony/monolog-bundle": "^2.12 || ^3.0",
-        "fluent/logger": "^0.3"
+        "php": "^5.6 || >=7.4",
+        "fluent/logger": "v1.0.*",
+        "symfony/monolog-bundle": "^2.12 || ^3.6"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.2",
-        "sensiolabs/security-checker": "^4.0",
+        "friendsofphp/php-cs-fixer": "^2.19",
+        "phpunit/phpunit": "9.5.*",
         "symfony/var-dumper": "^2.0 || ^3.0",
-        "symfony/debug": "^2.0 || ^3.0",
-        "phpunit/phpunit": "^4.8 || ^5.4"
+        "symfony/yaml": "3.4"
     },
     "scripts": {
         "check-cs": [

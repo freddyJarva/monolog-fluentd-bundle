@@ -13,10 +13,11 @@ namespace Musement\MonologFluentdBundle\Tests\DependencyInjection;
 
 use Monolog\Logger;
 use Musement\MonologFluentdBundle\DependencyInjection\MusementMonologFluentdExtension;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Yaml\Parser;
 
-class MusementMonologFluentdExtensionTest extends \PHPUnit_Framework_TestCase
+class MusementMonologFluentdExtensionTest extends TestCase
 {
     /** @var MusementMonologFluentdExtension */
     protected $loader;
@@ -24,7 +25,7 @@ class MusementMonologFluentdExtensionTest extends \PHPUnit_Framework_TestCase
     /** @var ContainerBuilder */
     protected $container;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->loader = new MusementMonologFluentdExtension();
         $this->container = new ContainerBuilder();
