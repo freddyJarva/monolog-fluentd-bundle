@@ -12,9 +12,10 @@
 namespace Musement\MonologFluentdBundle\Tests\DependencyInjection;
 
 use Musement\MonologFluentdBundle\DependencyInjection\Configuration;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
-class ConfigurationTest extends \PHPUnit_Framework_TestCase
+class ConfigurationTest extends TestCase
 {
     public function testGetConfigTreeBuilder()
     {

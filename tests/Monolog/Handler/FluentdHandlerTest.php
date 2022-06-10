@@ -15,8 +15,9 @@ use Fluent\Logger\Entity;
 use Fluent\Logger\FluentLogger;
 use Monolog\Logger;
 use Musement\MonologFluentdBundle\Monolog\Handler\FluentdHandler;
+use PHPUnit\Framework\TestCase;
 
-class FluentdHandlerTest extends \PHPUnit_Framework_TestCase
+class FluentdHandlerTest extends TestCase
 {
     public function testHandle()
     {
