@@ -1,21 +1,20 @@
 <?php
 
 /*
- * This file is part of "musement/monolog-fluentd-bundle".
+ * This file is part of "vt/monolog-fluentd-bundle".
  *
- * (c) Musement S.p.A. <oss@musement.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 
-namespace Musement\MonologFluentdBundle\Monolog\Handler;
+namespace VT\MonologFluentdBundle\Monolog\Handler;
 
 use Fluent\Logger\Entity;
 use Fluent\Logger\FluentLogger;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
-use Musement\MonologFluentdBundle\Monolog\Exception\MusementMonologFluentdHandlerException;
+use VT\MonologFluentdBundle\Monolog\Exception\VTMonologFluentdHandlerException;
 use Psr\Log\InvalidArgumentException;
 
 class FluentdHandler extends AbstractProcessingHandler
@@ -140,7 +139,7 @@ class FluentdHandler extends AbstractProcessingHandler
             ));
         } catch (\Exception $e) {
             if ($this->exceptions) {
-                throw new MusementMonologFluentdHandlerException(
+                throw new VTMonologFluentdHandlerException(
                     sprintf('An error occurred on fluentd side: "%s".', $e->getMessage()),
                     0,
                     $e

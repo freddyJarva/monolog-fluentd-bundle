@@ -1,20 +1,20 @@
 <?php
 
 /*
- * This file is part of "musement/monolog-fluentd-bundle".
+ * This file is part of "vt/monolog-fluentd-bundle".
  *
- * (c) Musement S.p.A. <oss@musement.com>
+ * (c) VT S.p.A. <oss@vt.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 
-namespace Musement\MonologFluentdBundle\Tests\Monolog\Handler;
+namespace VT\MonologFluentdBundle\Tests\Monolog\Handler;
 
 use Fluent\Logger\Entity;
 use Fluent\Logger\FluentLogger;
 use Monolog\Logger;
-use Musement\MonologFluentdBundle\Monolog\Handler\FluentdHandler;
+use VT\MonologFluentdBundle\Monolog\Handler\FluentdHandler;
 use PHPUnit\Framework\TestCase;
 
 class FluentdHandlerTest extends TestCase

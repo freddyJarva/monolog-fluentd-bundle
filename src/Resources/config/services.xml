@@ -5,26 +5,26 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="musement_monolog_fluentd.fluentd_logger.class">Fluent\Logger\FluentLogger</parameter>
-        <parameter key="musement_monolog_fluentd.fluentd_handler.class">Musement\MonologFluentdBundle\Monolog\Handler\FluentdHandler</parameter>
+        <parameter key="vt_monolog_fluentd.fluentd_logger.class">Fluent\Logger\FluentLogger</parameter>
+        <parameter key="vt_monolog_fluentd.fluentd_handler.class">VT\MonologFluentdBundle\Monolog\Handler\FluentdHandler</parameter>
     </parameters>
 
     <services>
-        <service id="musement_monolog_fluentd.fluent_logger" class="%musement_monolog_fluentd.fluentd_logger.class%">
-            <argument>%musement_monolog_fluentd.host%</argument>
-            <argument>%musement_monolog_fluentd.port%</argument>
-            <argument>%musement_monolog_fluentd.options%</argument>
+        <service id="vt_monolog_fluentd.fluent_logger" class="%vt_monolog_fluentd.fluentd_logger.class%">
+            <argument>%vt_monolog_fluentd.host%</argument>
+            <argument>%vt_monolog_fluentd.port%</argument>
+            <argument>%vt_monolog_fluentd.options%</argument>
         </service>
 
-        <service id="musement_monolog_fluentd.fluentd_handler" class="%musement_monolog_fluentd.fluentd_handler.class%">
-            <argument type="service" id="musement_monolog_fluentd.fluent_logger" />
-            <argument>%musement_monolog_fluentd.level%</argument>
+        <service id="vt_monolog_fluentd.fluentd_handler" class="%vt_monolog_fluentd.fluentd_handler.class%">
+            <argument type="service" id="vt_monolog_fluentd.fluent_logger" />
+            <argument>%vt_monolog_fluentd.level%</argument>
             <argument>true</argument>
             <call method="setTagFormat">
-                <argument>%musement_monolog_fluentd.tag_fmt%</argument>
+                <argument>%vt_monolog_fluentd.tag_fmt%</argument>
             </call>
             <call method="setExceptions">
-                <argument>%musement_monolog_fluentd.enable_exceptions%</argument>
+                <argument>%vt_monolog_fluentd.enable_exceptions%</argument>
             </call>
         </service>
     </services>

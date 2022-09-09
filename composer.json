@@ -1,5 +1,5 @@
 {
-    "name": "freddyjarva/monolog-fluentd-bundle",
+    "name": "vt/monolog-fluentd-bundle",
     "description": "Symfony2 bundle defining a fluentd handler for monolog",
     "homepage": "https://github.com/freddyJarva/monolog-fluentd-bundle",
     "license": "MIT",
@@ -10,10 +10,6 @@
             "role": "Developer"
         }
     ],
-    "support": {
-        "issues": "https://github.com/musement-oss/monolog-fluentd-bundle/issues",
-        "source": "https://github.com/musement-oss/monolog-fluentd-bundle/releases/latest"
-    },
     "minimum-stability": "stable",
     "config": {
         "sort-packages": true
@@ -46,12 +42,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Musement\\MonologFluentdBundle\\": "src/"
+            "VT\\MonologFluentdBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Musement\\MonologFluentdBundle\\Tests\\": "tests/"
+            "VT\\MonologFluentdBundle\\Tests\\": "tests/"
         }
     }
 }

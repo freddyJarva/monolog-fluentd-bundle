@@ -1,15 +1,14 @@
 <?php
 
 /*
- * This file is part of "musement/monolog-fluentd-bundle".
+ * This file is part of "vt/monolog-fluentd-bundle".
  *
- * (c) Musement S.p.A. <oss@musement.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 
-namespace Musement\MonologFluentdBundle\DependencyInjection;
+namespace VT\MonologFluentdBundle\DependencyInjection;
 
 use Fluent\Logger\FluentLogger;
 use Monolog\Logger;
@@ -26,7 +25,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('musement_monolog_fluentd');
+        $rootNode = $treeBuilder->root('vt_monolog_fluentd');
 
         $rootNode
             ->children()
