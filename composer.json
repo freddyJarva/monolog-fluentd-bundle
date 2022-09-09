@@ -1,17 +1,12 @@
 {
-    "name": "musement/monolog-fluentd-bundle",
+    "name": "freddyjarva/monolog-fluentd-bundle",
     "description": "Symfony2 bundle defining a fluentd handler for monolog",
-    "homepage": "https://github.com/musement-oss/monolog-fluentd-bundle",
+    "homepage": "https://github.com/freddyJarva/monolog-fluentd-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
     "authors": [
         {
-            "name": "Musement staff",
-            "email": "oss@musement.com",
-            "role": "Developer"
-        },
-        {
-            "name": "Emiliano Gabrielli",
+            "name": "FJ",
             "role": "Developer"
         }
     ],
