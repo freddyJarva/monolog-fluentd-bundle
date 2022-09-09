@@ -24,8 +24,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('vt_monolog_fluentd');
+        $treeBuilder = new TreeBuilder('vt_monolog_fluentd');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
