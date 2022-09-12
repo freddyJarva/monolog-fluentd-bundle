@@ -74,13 +74,13 @@ class FluentdLogger extends FluentLogger
     protected function getParameters(ContainerInterface $container): array
     {
         return [
-            "host" => $container->getParameter('monolog_fluentd.host'),
-            "port" => $container->getParameter('monolog_fluentd.port'),
-            "options" => $container->getParameter('monolog_fluentd.options'),
-            "level" => $container->getParameter('monolog_fluentd.level'),
-            "tag" => $container->getParameter('monolog_fluentd.tag_fmt'),
-            "enable_exceptions" => $container->getParameter('monolog_fluentd.enable_exceptions'),
-            "channels" => $container->getParameter('monolog_fluentd.channels'),
+            "host" => $container->getParameter('vt_monolog_fluentd.host'),
+            "port" => $container->getParameter('vt_monolog_fluentd.port'),
+            "options" => $container->getParameter('vt_monolog_fluentd.options'),
+            "level" => $container->getParameter('vt_monolog_fluentd.level'),
+            "tag" => $container->getParameter('vt_monolog_fluentd.tag_fmt'),
+            "enable_exceptions" => $container->getParameter('vt_monolog_fluentd.enable_exceptions'),
+            "channels" => $container->getParameter('vt_monolog_fluentd.channels'),
         ];
     }
 
