@@ -47,6 +47,13 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('enable_exceptions')
                     ->defaultValue(true)
                 ->end()
+                ->variableNode('channels')
+                ->defaultValue([
+                    "CHANNEL_STATISTICS" => "statistics",
+                    "CHANNEL_PLANIT" => "planit",
+                    "CHANNEL_PHP" => "php",
+                    "CONTAINER" => "planet",
+                ])
             ->end();
 
         return $treeBuilder;
