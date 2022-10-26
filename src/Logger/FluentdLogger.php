@@ -2,6 +2,7 @@
 
 namespace VT\MonologFluentdBundle\Logger;
 
+use Exception;
 use Fluent\Logger\FluentLogger;
 use Monolog\Logger;
 use Psr\Container\ContainerInterface;
@@ -283,16 +284,20 @@ class FluentdLogger extends FluentLogger
     {
         $data = [];
         $request = $this->requestStack->getCurrentRequest();
-        $data["context"] = [
-            "route" => $request->get("_route"),
-            "route_parameters" => [
-                "_route" => $request->get("_route"),
-                "_controller" => $request->get("_controller"),
-            ],
-            "request_uri" => $request->getRequestUri(),
-            "method" => $request->getMethod(),
-            "device" => (string) $this->getSourceSystem(),
-        ];
+        try {
+            $data["context"] = [
+                "route" => $request->get("_route"),
+                "route_parameters" => [
+                    "_route" => $request->get("_route"),
+                    "_controller" => $request->get("_controller"),
+                ],
+                "request_uri" => $request->getRequestUri(),
+                "method" => $request->getMethod(),
+                "device" => (string) $this->getSourceSystem(),
+            ];
+        } catch (Exception $ex) {
+            
+        }
 
         $data["level"] = $level;
         try {
