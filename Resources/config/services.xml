@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="HiQ\MonologFluentdBundle\Logger\FluentdLogger">
+            <argument type="service" id="service_container" />
+            <argument type="service" id="request_stack" />
+        </service>
+
+        <service id="HiQ\MonologFluentdBundle\Monolog\Handler\FluentdHandler">
+            <argument type="service" id="HiQ\MonologFluentdBundle\Logger\FluentdLogger" />
+            <argument>%monolog_fluentd.level%</argument>
+            <argument>true</argument>
+            <call method="setTagFormat">
+                <argument>%monolog_fluentd.tag_fmt%</argument>
+            </call>
+            <call method="setExceptions">
+                <argument>%monolog_fluentd.enable_exceptions%</argument>
+            </call>
+        </service>
+    </services>
+
+</container>

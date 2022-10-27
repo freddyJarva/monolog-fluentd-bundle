@@ -1,8 +1,7 @@
 <?php
 
-namespace VT\MonologFluentdBundle\Logger;
+namespace HiQ\MonologFluentdBundle\Logger;
 
-use Exception;
 use Fluent\Logger\FluentLogger;
 use Monolog\Logger;
 use Psr\Container\ContainerInterface;
@@ -75,13 +74,13 @@ class FluentdLogger extends FluentLogger
     protected function getParameters(ContainerInterface $container): array
     {
         return [
-            "host" => $container->getParameter('vt_monolog_fluentd.host'),
-            "port" => $container->getParameter('vt_monolog_fluentd.port'),
-            "options" => $container->getParameter('vt_monolog_fluentd.options'),
-            "level" => $container->getParameter('vt_monolog_fluentd.level'),
-            "tag" => $container->getParameter('vt_monolog_fluentd.tag_fmt'),
-            "enable_exceptions" => $container->getParameter('vt_monolog_fluentd.enable_exceptions'),
-            "channels" => $container->getParameter('vt_monolog_fluentd.channels'),
+            "host" => $container->getParameter('monolog_fluentd.host'),
+            "port" => $container->getParameter('monolog_fluentd.port'),
+            "options" => $container->getParameter('monolog_fluentd.options'),
+            "level" => $container->getParameter('monolog_fluentd.level'),
+            "tag" => $container->getParameter('monolog_fluentd.tag_fmt'),
+            "enable_exceptions" => $container->getParameter('monolog_fluentd.enable_exceptions'),
+            "channels" => $container->getParameter('monolog_fluentd.channels'),
         ];
     }
 
@@ -284,20 +283,16 @@ class FluentdLogger extends FluentLogger
     {
         $data = [];
         $request = $this->requestStack->getCurrentRequest();
-        try {
-            $data["context"] = [
-                "route" => $request->get("_route"),
-                "route_parameters" => [
-                    "_route" => $request->get("_route"),
-                    "_controller" => $request->get("_controller"),
-                ],
-                "request_uri" => $request->getRequestUri(),
-                "method" => $request->getMethod(),
-                "device" => (string) $this->getSourceSystem(),
-            ];
-        } catch (Exception $ex) {
-            
-        }
+        $data["context"] = [
+            "route" => $request->get("_route"),
+            "route_parameters" => [
+                "_route" => $request->get("_route"),
+                "_controller" => $request->get("_controller"),
+            ],
+            "request_uri" => $request->getRequestUri(),
+            "method" => $request->getMethod(),
+            "device" => (string) $this->getSourceSystem(),
+        ];
 
         $data["level"] = $level;
         try {

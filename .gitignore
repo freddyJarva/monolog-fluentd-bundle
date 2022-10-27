@@ -1,2 +1,38 @@
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/cache/*
+!var/cache/.gitkeep
+/var/log/*
+!var/logs/.gitkeep
+/var/jwt/*
+!var/jwt/.gitkeep
+
 /vendor/
-/.php_cs.cache
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+# Hidden files.
+.DS*
+*~
+.project
+# Windows links.
+*.lnk
+# Temporary files.
+tmp*
+# Exclude IDE's project directory
+nbproject
+.idea
+
+build/
